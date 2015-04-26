@@ -5,20 +5,17 @@ import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
-import javax.persistence.Temporal;
 
 
 @Entity
 @DiscriminatorValue ("P")
-public class Professor_SingleTable extends Pessoa_SingleTable {
+public class Professor extends Pessoa {
 
-	@Column(name="DATA_ADMISSAO_PROFESSOR")
-        @Temporal(javax.persistence.TemporalType.DATE)
+	@Column(name="data_professor")
 	private Date dataAdmicao;
-        @Column(name="AREA_ATUACAO_PROFESSOR")
 	private String areaDeAtuacao;
 	
-	public Professor_SingleTable() { }
+	public Professor() { }
 
 	public Date getDataAdmicao() {
 		return dataAdmicao;

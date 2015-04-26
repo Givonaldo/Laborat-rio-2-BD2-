@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 
+
 @Entity
 @Table(name = "PER_CLASS_PROFESSOR")
 public class Professor_Per_Class extends Pessoa_Per_Class implements Serializable{

@@ -1,4 +1,4 @@
-package joined;
+package joined_entidades;
 
 import java.io.Serializable;
 import javax.persistence.Column;

@@ -1,4 +1,4 @@
-package joined;
+package joined_entidades;
 
 import comuns.Curso;
 import comuns.SituacaoAluno;
@@ -39,4 +39,3 @@ public class Aluno_Joined extends Pessoa_Joined implements Serializable {
         this.situacao = situacao;
     }
 }
-

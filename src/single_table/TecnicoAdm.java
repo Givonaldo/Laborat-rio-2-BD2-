@@ -1,22 +1,19 @@
-package per_class;
+package single_table;
 
 import java.util.Date;
 import javax.persistence.Column;
+import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
-import javax.persistence.Table;
-import javax.persistence.Temporal;
 
 @Entity
-@Table(name = "PER_CLASS_TECNICO_ADM")
-public class TecnicoAdm_Per_Class extends Pessoa_Per_Class {
+@DiscriminatorValue ("T")
+public class TecnicoAdm extends Pessoa {
 	
-	@Column(name="DATA_ADMISSAO_TECNICO_ADM")
-        @Temporal(javax.persistence.TemporalType.DATE)
+	@Column(name="data_adm")
 	private Date dataAdmicao;
-        @Column(name="CARGO_TECNICO_ADM")
 	private String cargo;
 	
-	public TecnicoAdm_Per_Class() { }
+	public TecnicoAdm() { }
 	
 	public Date getDataAdmicao() {
 		return dataAdmicao;

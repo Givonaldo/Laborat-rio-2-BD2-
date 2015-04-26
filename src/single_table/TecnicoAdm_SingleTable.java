@@ -30,5 +30,8 @@ public class TecnicoAdm_SingleTable extends Pessoa_SingleTable {
 	public void setCargo(String cargo) {
 		this.cargo = cargo;
 	}
+	
+	
+	
+	
 }
-

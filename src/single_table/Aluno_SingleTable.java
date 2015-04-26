@@ -35,4 +35,7 @@ public class Aluno_SingleTable extends Pessoa_SingleTable implements Serializabl
 	public void setSituacao(SituacaoAluno situacao) {
 		this.situacao = situacao;
 	}
+	
+	
+	
 }

@@ -1,4 +1,4 @@
-package joined;
+package joined_entidades;
 
 import java.util.Date;
 import javax.persistence.Column;
