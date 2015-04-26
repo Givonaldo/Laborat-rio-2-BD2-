@@ -1,20 +1,24 @@
-package joined;
-
+package single_table;
 
 import java.util.Date;
+
 import javax.persistence.Column;
+import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
-import javax.persistence.PrimaryKeyJoinColumn;
+import javax.persistence.Temporal;
+
 
 @Entity
-@PrimaryKeyJoinColumn (name="id")
-public class Professor extends Pessoa {
+@DiscriminatorValue ("P")
+public class Professor_SingleTable extends Pessoa_SingleTable {
 
-	@Column(name="data_professor")
+	@Column(name="DATA_ADMISSAO_PROFESSOR")
+        @Temporal(javax.persistence.TemporalType.DATE)
 	private Date dataAdmicao;
+        @Column(name="AREA_ATUACAO_PROFESSOR")
 	private String areaDeAtuacao;
 	
-	public Professor() { }
+	public Professor_SingleTable() { }
 
 	public Date getDataAdmicao() {
 		return dataAdmicao;
@@ -30,8 +34,5 @@ public class Professor extends Pessoa {
 
 	public void setAreaDeAtuacao(String areaDeAtuacao) {
 		this.areaDeAtuacao = areaDeAtuacao;
-	}
-	
-	
-	
+	}	
 }
