@@ -1,30 +1,92 @@
 package dao;
 
 import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
+
 import single_table.Pessoa_SingleTable;
 
-public class SingleTable_Dao {
-    
-    private final EntityManagerFactory factory;
-    private EntityManager em;
-    
-    public SingleTable_Dao() {
-        factory = Persistence.createEntityManagerFactory("Teste");        
-    }
+public class SingleTable_Dao extends Dao<Pessoa_SingleTable> {
 
-    public void add(Pessoa_SingleTable obj)throws Exception {
-        em = factory.createEntityManager();
-        try {
-            em.getTransaction().begin();
-            em.persist(obj);
-            em.getTransaction().commit();
-        } catch (Exception e) {
-            //throw new Exception();
-        } finally {
-            em.close();
-            factory.close();
-        }
-    }
+	private EntityManager em;
+
+	public SingleTable_Dao() {
+		em = Dao.getEntityManager();
+	}
+
+	@Override
+	public void add(Pessoa_SingleTable obj) throws Exception {
+		try {
+			em.getTransaction().begin();
+			em.persist(obj);
+			em.getTransaction().commit();
+		} catch (Exception e) {
+			if (em.isOpen()) {
+				em.getTransaction().rollback();
+			}
+			throw new Exception();
+		} finally {
+			if (em.isOpen()) {
+				em.close();
+			}
+		}
+	}
+
+	@Override
+	public void remove(long pessoa) throws Exception {
+		try {
+			em.getTransaction().begin();
+			em.remove(pessoa);
+			em.getTransaction().commit();
+		} catch (Exception e) {
+			if (em.isOpen()) {
+				em.getTransaction().rollback();
+			}
+			throw new Exception();
+		} finally {
+			if (em.isOpen()) {
+				em.close();
+			}
+		}
+	}
+
+	@Override
+	public void update(Pessoa_SingleTable pessoa) throws Exception {
+		try {
+			em.getTransaction().begin();
+			Pessoa_SingleTable p2 = em.find(Pessoa_SingleTable.class,
+					pessoa.getId());
+			p2.setNome(pessoa.getNome());
+			p2.setMatricula(pessoa.getMatricula());
+			em.merge(p2);
+			em.getTransaction().commit();
+		} catch (Exception e) {
+			if (em.isOpen()) {
+				em.getTransaction().rollback();
+			}
+			throw new Exception();
+		} finally {
+			if (em.isOpen()) {
+				em.close();
+			}
+		}
+	}
+
+	@Override
+	public Pessoa_SingleTable read(long codigo) throws Exception {
+		try {
+			em.getTransaction().begin();
+			Pessoa_SingleTable p2 = em.find(Pessoa_SingleTable.class, codigo);
+			em.merge(p2);
+			em.getTransaction().commit();
+			return p2;
+		} catch (Exception e) {
+			if (em.isOpen()) {
+				em.getTransaction().rollback();
+			}
+			throw new Exception();
+		} finally {
+			if (em.isOpen()) {
+				em.close();
+			}
+		}
+	}
 }

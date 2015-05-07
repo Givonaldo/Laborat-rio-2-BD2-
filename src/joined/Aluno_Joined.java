@@ -1,28 +1,26 @@
-package per_class;
+package joined;
 
 import comuns.Curso;
 import comuns.SituacaoAluno;
-
 import java.io.Serializable;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "PER_CLASS_ALUNO")
-public class Aluno_Per_Class extends Pessoa_Per_Class implements Serializable {
+@Table(name = "JOINED_ALUNOS")
+@PrimaryKeyJoinColumn(name = "ID_PESSOA")
+public class Aluno_Joined extends Pessoa_Joined implements Serializable {
 
-    @Column(name = "CURSO_ALUNO")
     private Curso curso;
-    
-    @Column(name="SITUACAO_ALUNO")
     @Enumerated(EnumType.STRING)
+    @Column(name = "SITUACAO")
     private SituacaoAluno situacao;
 
-    public Aluno_Per_Class() {
+    public Aluno_Joined() {
     }
 
     public Curso getCurso() {
@@ -40,5 +38,4 @@ public class Aluno_Per_Class extends Pessoa_Per_Class implements Serializable {
     public void setSituacao(SituacaoAluno situacao) {
         this.situacao = situacao;
     }
-
 }

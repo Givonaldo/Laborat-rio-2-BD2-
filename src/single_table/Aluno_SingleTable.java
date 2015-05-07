@@ -1,20 +1,26 @@
 package single_table;
 
 import java.io.Serializable;
+
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+
 import comuns.Curso;
 import comuns.SituacaoAluno;
+
 import javax.persistence.Column;
 
 @Entity
 @DiscriminatorValue ("A")
 public class Aluno_SingleTable extends Pessoa_SingleTable implements Serializable {
 	
-        @Column(name="CURSO_ALUNO")
+    @Column(name="CURSO_ALUNO")
 	private Curso curso;	
 	
-        @Column(name="SITUACAO_ALUNO")
+    @Column(name="SITUACAO_ALUNO")
+    @Enumerated(EnumType.STRING)
 	private SituacaoAluno situacao;
 
 	public Aluno_SingleTable() { 

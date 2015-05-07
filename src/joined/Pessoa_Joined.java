@@ -1,4 +1,4 @@
-package per_class;
+package joined;
 
 import java.io.Serializable;
 import javax.persistence.Column;
@@ -9,25 +9,19 @@ import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.Table;
-import javax.persistence.TableGenerator;
 
 @Entity
-@Table(name = "PER_CLASS_PESSOA")
-@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
-public abstract class Pessoa_Per_Class implements Serializable {
-
-    @TableGenerator(name = "SEQUENCIA_PESSOA",
-            table = "PER_CLASS_GERADOR_SEQUENCIAIS",
-            pkColumnName = "PRIMARY_KEY",
-            valueColumnName = "VALOR_SEQUENCIAL_COLUNA_PK")
+@Inheritance(strategy = InheritanceType.JOINED)
+@Table(name = "JOINED_PESSOAS")
+public abstract class Pessoa_Joined implements Serializable {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "ID_PESSOA")
-    @GeneratedValue(strategy = GenerationType.TABLE,generator = "SEQUENCIA_PESSOA")
     private long id;
-    @Column(name = "NOME_PESSOA")
+    @Column(name = "NOME")
     private String nome;
-    @Column(name = "MATRICULA_PESSOA")
+    @Column(name = "MATRICULA")
     private long matricula;
 
     public long getId() {

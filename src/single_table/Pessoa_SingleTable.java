@@ -19,11 +19,12 @@ import javax.persistence.Table;
 public abstract class Pessoa_SingleTable implements Serializable {
 	
 	@Id
+	@Column(name = "ID_PESSOA")
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
-        @Column(name= "NOME")
+    @Column(name= "NOME")
 	private String nome;
-        @Column(name= "MATRICULA")
+    @Column(name= "MATRICULA")
 	private long matricula;
 	
 	public long getId() {

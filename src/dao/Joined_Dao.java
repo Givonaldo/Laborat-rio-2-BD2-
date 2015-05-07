@@ -2,7 +2,7 @@ package dao;
 
 import javax.persistence.EntityManager;
 
-import joined_entidades.Pessoa_Joined;
+import joined.Pessoa_Joined;
 
 public class Joined_Dao extends Dao<Pessoa_Joined> {
 
@@ -74,9 +74,9 @@ public class Joined_Dao extends Dao<Pessoa_Joined> {
 		try {
 			em.getTransaction().begin();
 			Pessoa_Joined p2 = em.find(Pessoa_Joined.class, codigo);
-			em.getTransaction().commit();			
-			return em.merge(p2);
-			
+			em.merge(p2);
+			em.getTransaction().commit();
+			return p2;
 		} catch (Exception e) {
 			if (em.isOpen()) {
 				em.getTransaction().rollback();
