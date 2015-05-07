@@ -1,9 +1,10 @@
 package br.edu.ifpb.ads.lab2.main;
 
+
 import br.edu.ifpb.ads.lab2.modelo.dao.JoinedDao;
-import br.edu.ifpb.ads.lab2.modelo.entidades.joined.Aluno_Joined;
-import br.edu.ifpb.ads.lab2.modelo.entidades.joined.Pessoa_Joined;
+import br.edu.ifpb.ads.lab2.modelo.dao.PerClassDao;
 import br.edu.ifpb.ads.lab2.modelo.entidades.joined.TecnicoAdm_Joined;
+import br.edu.ifpb.ads.lab2.modelo.entidades.per_class.TecnicoAdm_Per_Class;
 
 public class TesteHibernate {
 
@@ -24,8 +25,8 @@ public class TesteHibernate {
 //        aluno.setCurso(curso);
 //        aluno.setSituacao(SituacaoAluno.MATRICULADO);
 //
-//        //Professor_Joined professor = new Professor_Joined();
-//        //Professor_SingleTable professor = new Professor_SingleTable();
+// //      Professor_Joined professor = new Professor_Joined();
+////        Professor_SingleTable professor = new Professor_SingleTable();
 //        Professor_Per_Class  professor = new Professor_Per_Class();
 //        
 //        professor.setNome("Ivo Morais Gomes");
@@ -42,31 +43,32 @@ public class TesteHibernate {
 //        tecAdm.setCargo("Secretário");
 //        tecAdm.setDataAdmissao(data);
 //
-//        JoinedDao dao1 = new JoinedDao();
-//    	  SingleDao dao1 = new SingleDao(); 
+//        //JoinedDao dao1 = new JoinedDao();
+//    	//SingleDao dao1 = new SingleDao(); 
 //        PerClassDao dao1 = new PerClassDao();  
 //        dao1.add(aluno);
-    	
-        JoinedDao dao2 = new JoinedDao(); 
-//        SingleDao dao2 = new SingleDao();
+//    	
+////        JoinedDao dao2 = new JoinedDao(); 
+////        SingleDao dao2 = new SingleDao();
 //        PerClassDao dao2 = new PerClassDao();  
 //        dao2.add(professor);
-//        
-//    	  JoinedDao dao3 = new JoinedDao();
-//    	  SingleDao dao3 = new SingleDao(); 
+//       
+////    	  JoinedDao dao3 = new JoinedDao();
+////    	  SingleDao dao3 = new SingleDao(); 
 //        PerClassDao dao3 = new PerClassDao();          
 //        dao3.add(tecAdm);
     	
     	
     	    	
-        TecnicoAdm_Joined pessoa = new TecnicoAdm_Joined();
-        pessoa.setId(3);
-        pessoa.setNome("Fulanos de Talls");
-        pessoa.setMatricula(20150005); 
-       
-        dao2.upDate(pessoa);
+        TecnicoAdm_Per_Class pessoa = new TecnicoAdm_Per_Class();
+        pessoa.setId(1);
+//        pessoa.setNome("Fulanos de Talls");
+//        pessoa.setMatricula(20150005); 
         
-        //System.out.println(dao2.read(pessoa.getId()));
+        PerClassDao dao = new PerClassDao();
+        //dao.upDate(pessoa);
+        
+        System.out.println(dao.read(pessoa.getId()));
 
     }
 }

@@ -39,4 +39,15 @@ public class Aluno_Per_Class extends Pessoa_Per_Class {
         this.situacao = situacao;
     }
 
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		System.out.println(super.toString());
+		builder.append("Aluno_Per_Class\n");
+		builder.append(curso);
+		builder.append("\nSituacao: ");
+		builder.append(situacao);
+		return builder.toString();
+	}
+
 }

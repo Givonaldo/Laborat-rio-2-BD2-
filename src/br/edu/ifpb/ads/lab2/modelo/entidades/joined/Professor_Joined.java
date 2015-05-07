@@ -42,6 +42,7 @@ public class Professor_Joined extends Pessoa_Joined {
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
+		System.out.println(super.toString());
 		builder.append("Professor_Joined \nData Admissao: ");
 		builder.append(dataAdmissao);
 		builder.append("\nArea de Atuacao: ");

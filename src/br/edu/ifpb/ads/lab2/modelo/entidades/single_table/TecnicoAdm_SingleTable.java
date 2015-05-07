@@ -31,5 +31,17 @@ public class TecnicoAdm_SingleTable extends Pessoa_SingleTable {
 	public void setCargo(String cargo) {
 		this.cargo = cargo;
 	}
+
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		System.out.println(super.toString());
+		builder.append("TecnicoAdm_SingleTable\nDataAdmissao: ");
+		builder.append(dataAdmissao);
+		builder.append("\nCargo: ");
+		builder.append(cargo);
+		return builder.toString();
+	}
+	
 }
 

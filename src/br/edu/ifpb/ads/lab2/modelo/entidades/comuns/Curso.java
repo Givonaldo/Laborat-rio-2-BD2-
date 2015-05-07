@@ -1,6 +1,7 @@
 package br.edu.ifpb.ads.lab2.modelo.entidades.comuns;
 
 import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
 
@@ -19,5 +20,13 @@ public class Curso implements Serializable {
     public void setDescricao(String nome) {
         this.nome = nome;
     }
+
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("Nome Curso: ");
+		builder.append(nome);
+		return builder.toString();
+	}
 
 }

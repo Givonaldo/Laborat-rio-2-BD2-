@@ -37,4 +37,16 @@ public class Aluno_SingleTable extends Pessoa_SingleTable {
 	public void setSituacao(SituacaoAluno situacao) {
 		this.situacao = situacao;
 	}
+
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		System.out.println(super.toString());
+		builder.append("Aluno_SingleTable\n");
+		builder.append(curso);
+		builder.append("\nSituacao: ");
+		builder.append(situacao);
+		return builder.toString();
+	}
+	
 }

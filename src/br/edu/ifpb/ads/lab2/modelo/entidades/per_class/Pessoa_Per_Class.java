@@ -55,4 +55,16 @@ public abstract class Pessoa_Per_Class implements Serializable {
         this.matricula = matricula;
     }
 
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("Pessoa_Per_Class\nId: ");
+		builder.append(id);
+		builder.append("\nNome: ");
+		builder.append(nome);
+		builder.append("\nMatricula: ");
+		builder.append(matricula);
+		return builder.toString();
+	}
+
 }

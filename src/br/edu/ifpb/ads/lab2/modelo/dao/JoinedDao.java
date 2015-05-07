@@ -55,8 +55,9 @@ public class JoinedDao extends Dao<Pessoa_Joined> {
 		try {
 			em.getTransaction().begin();
 			em.find(Pessoa_Joined.class, codigo);
+			Pessoa_Joined p = em.find(Pessoa_Joined.class, codigo);
 			em.getTransaction().commit();
-			return em.find(Pessoa_Joined.class, codigo);
+			return p;
 		} catch (Exception e) {
 			if(em.isOpen()){
 				em.getTransaction().rollback();	

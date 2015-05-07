@@ -42,7 +42,8 @@ public class Aluno_Joined extends Pessoa_Joined {
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
-		builder.append("Aluno_Joined \nCurso: ");
+		System.out.println(super.toString());
+		builder.append("Aluno_Joined\n");
 		builder.append(curso);
 		builder.append("\nSituação: ");
 		builder.append(situacao);

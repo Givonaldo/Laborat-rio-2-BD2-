@@ -34,6 +34,17 @@ public class Professor_Per_Class extends Pessoa_Per_Class {
 	public void setAreaDeAtuacao(String areaDeAtuacao) {
 		this.areaDeAtuacao = areaDeAtuacao;
 	}
+
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		System.out.println(super.toString());
+		builder.append("Professor_Per_Class\nData Admissao: ");
+		builder.append(dataAdmissao);
+		builder.append("\nArea de Atuacao: ");
+		builder.append(areaDeAtuacao);
+		return builder.toString();
+	}
 	
 	
 	

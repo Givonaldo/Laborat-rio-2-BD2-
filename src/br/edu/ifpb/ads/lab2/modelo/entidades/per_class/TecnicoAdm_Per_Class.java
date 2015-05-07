@@ -30,5 +30,17 @@ public class TecnicoAdm_Per_Class extends Pessoa_Per_Class {
 	}
 	public void setCargo(String cargo) {
 		this.cargo = cargo;
+	}
+
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		System.out.println(super.toString());
+		builder.append("TecnicoAdm_Per_Class\nData Admissao: ");
+		builder.append(dataAdmissao);
+		builder.append("\nCargo: ");
+		builder.append(cargo);
+		return builder.toString();
 	}	
+	
 }

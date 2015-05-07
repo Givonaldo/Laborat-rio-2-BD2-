@@ -46,5 +46,16 @@ public abstract class Pessoa_SingleTable implements Serializable {
 	public void setMatricula(long matricula) {
 		this.matricula = matricula;
 	}
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("Pessoa_SingleTable\nIid: ");
+		builder.append(id);
+		builder.append("\nNome: ");
+		builder.append(nome);
+		builder.append("\nMatricula: ");
+		builder.append(matricula);
+		return builder.toString();
+	}
 	
 }

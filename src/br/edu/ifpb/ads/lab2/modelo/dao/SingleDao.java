@@ -2,6 +2,7 @@ package br.edu.ifpb.ads.lab2.modelo.dao;
 
 import javax.persistence.EntityManager;
 
+import br.edu.ifpb.ads.lab2.modelo.entidades.joined.Pessoa_Joined;
 import br.edu.ifpb.ads.lab2.modelo.entidades.single_table.Pessoa_SingleTable;
 
 public class SingleDao extends Dao<Pessoa_SingleTable> {
@@ -54,9 +55,9 @@ public class SingleDao extends Dao<Pessoa_SingleTable> {
 	public Pessoa_SingleTable read(long codigo) throws Exception {
 		try {
 			em.getTransaction().begin();
-			em.find(Pessoa_SingleTable.class, codigo);
+			Pessoa_SingleTable p = em.find(Pessoa_SingleTable.class, codigo);
 			em.getTransaction().commit();
-			return em.find(Pessoa_SingleTable.class, codigo);
+			return p;
 		} catch (Exception e) {
 			if (em.isOpen()) {
 				em.getTransaction().rollback();
