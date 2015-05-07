@@ -1,28 +1,29 @@
-package per_class;
+package br.edu.ifpb.ads.lab2.modelo.entidades.single_table;
 
 import java.util.Date;
+
 import javax.persistence.Column;
+import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
-import javax.persistence.Table;
 import javax.persistence.Temporal;
 
 @Entity
-@Table(name = "PER_CLASS_TECNICO_ADM")
-public class TecnicoAdm_Per_Class extends Pessoa_Per_Class {
+@DiscriminatorValue ("T")
+public class TecnicoAdm_SingleTable extends Pessoa_SingleTable {
 	
 	@Column(name="DATA_ADMISSAO_TECNICO_ADM")
         @Temporal(javax.persistence.TemporalType.DATE)
-	private Date dataAdmicao;
-        @Column(name="CARGO_TECNICO_ADM")
+	private Date dataAdmissao;
+        @Column(name="CARGO")
 	private String cargo;
 	
-	public TecnicoAdm_Per_Class() { }
+	public TecnicoAdm_SingleTable() { }
 	
 	public Date getDataAdmicao() {
-		return dataAdmicao;
+		return dataAdmissao;
 	}
-	public void setDataAdmicao(Date dataAdmicao) {
-		this.dataAdmicao = dataAdmicao;
+	public void setDataAdmissao(Date dataAdmissao) {
+		this.dataAdmissao = dataAdmissao;
 	}
 	public String getCargo() {
 		return cargo;
@@ -30,8 +31,5 @@ public class TecnicoAdm_Per_Class extends Pessoa_Per_Class {
 	public void setCargo(String cargo) {
 		this.cargo = cargo;
 	}
-	
-	
-	
-	
 }
+

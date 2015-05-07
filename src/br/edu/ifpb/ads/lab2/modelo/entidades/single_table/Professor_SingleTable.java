@@ -1,4 +1,4 @@
-package single_table;
+package br.edu.ifpb.ads.lab2.modelo.entidades.single_table;
 
 import java.util.Date;
 
@@ -14,18 +14,18 @@ public class Professor_SingleTable extends Pessoa_SingleTable {
 
 	@Column(name="DATA_ADMISSAO_PROFESSOR")
         @Temporal(javax.persistence.TemporalType.DATE)
-	private Date dataAdmicao;
+	private Date dataAdmissao;
         @Column(name="AREA_ATUACAO_PROFESSOR")
 	private String areaDeAtuacao;
 	
 	public Professor_SingleTable() { }
 
-	public Date getDataAdmicao() {
-		return dataAdmicao;
+	public Date getDataAdmissao() {
+		return dataAdmissao;
 	}
 
-	public void setDataAdmicao(Date dataAdmicao) {
-		this.dataAdmicao = dataAdmicao;
+	public void setDataAdmissao(Date dataAdmissao) {
+		this.dataAdmissao = dataAdmissao;
 	}
 
 	public String getAreaDeAtuacao() {
@@ -34,8 +34,5 @@ public class Professor_SingleTable extends Pessoa_SingleTable {
 
 	public void setAreaDeAtuacao(String areaDeAtuacao) {
 		this.areaDeAtuacao = areaDeAtuacao;
-	}
-	
-	
-	
+	}	
 }
