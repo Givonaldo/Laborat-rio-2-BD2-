@@ -1,35 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="lib" path="lib/hibernate-commons-annotations-4.0.2.Final.jar"/>
-	<classpathentry kind="lib" path="lib/hibernate-core-4.2.6.Final.jar"/>
-	<classpathentry kind="lib" path="lib/hibernate-entitymanager-4.2.6.Final.jar"/>
-	<classpathentry kind="lib" path="lib/hibernate-envers-4.2.6.Final.jar"/>
-	<classpathentry kind="lib" path="lib/hibernate-jpa-2.0-api-1.0.1.Final.jar"/>
-	<classpathentry kind="lib" path="lib/hibernate-search-analyzers-4.2.0.CR1.jar"/>
-	<classpathentry kind="lib" path="lib/hibernate-search-engine-4.2.0.CR1.jar"/>
-	<classpathentry kind="lib" path="lib/hibernate-search-infinispan-4.2.0.CR1.jar"/>
-	<classpathentry kind="lib" path="lib/hibernate-search-orm-4.2.0.CR1.jar"/>
-	<classpathentry kind="lib" path="lib/hibernate-testing-4.2.6.Final.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Alexandre/Downloads/Programas ADS/Hibernate Jar&apos;s/lib/antlr-2.7.6.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Alexandre/Downloads/Programas ADS/Hibernate Jar&apos;s/lib/c3p0-0.9.1.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Alexandre/Downloads/Programas ADS/Hibernate Jar&apos;s/lib/cglib-2.2.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Alexandre/Downloads/Programas ADS/Hibernate Jar&apos;s/lib/commons-collections-3.1.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Alexandre/Downloads/Programas ADS/Hibernate Jar&apos;s/lib/dom4j-1.6.1.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Alexandre/Downloads/Programas ADS/Hibernate Jar&apos;s/lib/ehcache-1.5.0.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Alexandre/Downloads/Programas ADS/Hibernate Jar&apos;s/lib/hibernate3.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Alexandre/Downloads/Programas ADS/Hibernate Jar&apos;s/lib/hibernate-jpa-2.0-api-1.0.0.Final.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Alexandre/Downloads/Programas ADS/Hibernate Jar&apos;s/lib/hibernate-testing.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Alexandre/Downloads/Programas ADS/Hibernate Jar&apos;s/lib/infinispan-core-4.0.0.FINAL.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Alexandre/Downloads/Programas ADS/Hibernate Jar&apos;s/lib/javassist-3.9.0.GA.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Alexandre/Downloads/Programas ADS/Hibernate Jar&apos;s/lib/jbosscache-core-3.2.1.GA.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Alexandre/Downloads/Programas ADS/Hibernate Jar&apos;s/lib/jta-1.1.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Alexandre/Downloads/Programas ADS/Hibernate Jar&apos;s/lib/log4j-1.2.16.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Alexandre/Downloads/Programas ADS/Hibernate Jar&apos;s/lib/mysql-connector-java-5.1.17-bin.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Alexandre/Downloads/Programas ADS/Hibernate Jar&apos;s/lib/oscache-2.1.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Alexandre/Downloads/Programas ADS/Hibernate Jar&apos;s/lib/proxool-0.8.3.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Alexandre/Downloads/Programas ADS/Hibernate Jar&apos;s/lib/slf4j-api-1.6.1.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Alexandre/Downloads/Programas ADS/Hibernate Jar&apos;s/lib/slf4j-log4j12-1.6.1.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Alexandre/Downloads/Programas ADS/Hibernate Jar&apos;s/lib/swarmcache-1.0RC2.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Hibernate"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

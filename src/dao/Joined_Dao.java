@@ -1,65 +1,91 @@
 package dao;
 
 import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
+
 import joined_entidades.Pessoa_Joined;
 
-public class Joined_Dao {
-    
-    private final EntityManagerFactory factory;
-    private EntityManager em;
-    
-    public Joined_Dao() {
-        factory = Persistence.createEntityManagerFactory("Teste");        
-    }
+public class Joined_Dao extends Dao<Pessoa_Joined> {
 
-    public void add(Pessoa_Joined obj)throws Exception {
-        em = factory.createEntityManager();
-        try {
-            em.getTransaction().begin();
-            em.persist(obj);
-            em.getTransaction().commit();
-        } catch (Exception e) {
-            //throw new Exception();
-        } finally {
-            em.close();
-            factory.close();
-        }
-    }
-    
-    
-    
-    
-    // Médotos abaixo ainda errados
-    
-    
-    public void remove(Pessoa_Joined obj) throws Exception{ 
-        em = factory.createEntityManager();
-        try {
-            em.getTransaction().begin();
-            em.remove(obj);
-            em.getTransaction().commit();
-        } catch (Exception e) {
-            throw new Exception();
-        } finally {
-            em.close();
-            factory.close();
-        }
-    }
-    
-    public void update(Pessoa_Joined obj) throws Exception {
-        em = factory.createEntityManager();
-        try {
-           em.getTransaction().begin();
-           Pessoa_Joined p2 = em.find(Pessoa_Joined.class, obj.getId());
-           em.merge(p2);
-           em.getTransaction().commit();
-        } catch (Exception e) {
-            throw new Exception();
-        } finally {
-            em.close();
-            factory.close();
-        }
-    }
+	private EntityManager em;
+
+	public Joined_Dao() {
+		this.em = Dao.getEntityManager();
+	}
+
+	@Override
+	public void add(Pessoa_Joined pessoa) throws Exception {
+		try {
+			em.getTransaction().begin();
+			em.persist(pessoa);
+			em.getTransaction().commit();
+		} catch (Exception e) {
+			if (em.isOpen()) {
+				em.getTransaction().rollback();
+			}
+			throw new Exception();
+		} finally {
+			if (em.isOpen()) {
+				em.close();
+			}
+		}
+	}
+
+	@Override
+	public void remove(long pessoa) throws Exception {
+		try {
+			em.getTransaction().begin();
+			em.remove(pessoa);
+			em.getTransaction().commit();
+		} catch (Exception e) {
+			if (em.isOpen()) {
+				em.getTransaction().rollback();
+			}
+			throw new Exception();
+		} finally {
+			if (em.isOpen()) {
+				em.close();
+			}
+		}
+	}
+
+	@Override
+	public void update(Pessoa_Joined pessoa) throws Exception {
+		try {
+			em.getTransaction().begin();
+			Pessoa_Joined p2 = em.find(Pessoa_Joined.class, pessoa.getId());
+			p2.setNome(pessoa.getNome());
+			p2.setMatricula(pessoa.getMatricula());
+			em.merge(p2);
+			em.getTransaction().commit();
+		} catch (Exception e) {
+			if (em.isOpen()) {
+				em.getTransaction().rollback();
+			}
+			throw new Exception();
+		} finally {
+			if (em.isOpen()) {
+				em.close();
+			}
+		}
+	}
+
+	@Override
+	public Pessoa_Joined read(long codigo) throws Exception {
+		try {
+			em.getTransaction().begin();
+			Pessoa_Joined p2 = em.find(Pessoa_Joined.class, codigo);
+			em.getTransaction().commit();			
+			return em.merge(p2);
+			
+		} catch (Exception e) {
+			if (em.isOpen()) {
+				em.getTransaction().rollback();
+			}
+			throw new Exception();
+		} finally {
+			if (em.isOpen()) {
+				em.close();
+			}
+		}
+	}
 }
